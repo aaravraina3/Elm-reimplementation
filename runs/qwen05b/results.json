@@ -1,0 +1,56 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "config": {
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "rank": 4,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "layers_to_transform": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "eta_start": 1.0,
+    "eta_end": 1000.0,
+    "top_k": 50,
+    "temperature": 1.2,
+    "fluency_guidance": 3.0,
+    "fluency_max_new_tokens": 48,
+    "erase_scale": 1.0,
+    "retain_scale": 1.0,
+    "fluency_scale": 1.0,
+    "lr": 0.0001,
+    "grad_accum": 2,
+    "num_steps": 400,
+    "min_len": 50,
+    "max_len": 512,
+    "seed": 0
+  },
+  "mcq_limit": 300,
+  "ppl_limit": 30,
+  "before": {
+    "wmdp_cyber_acc": 0.3566666666666667,
+    "retain_ppl": 14.023682292046344,
+    "forget_ppl": 17.051105328844972
+  },
+  "after": {
+    "wmdp_cyber_acc": 0.27,
+    "retain_ppl": 19.43123888986562,
+    "forget_ppl": 172.4536523310434
+  },
+  "delta": {
+    "wmdp_cyber_acc": -0.08666666666666667,
+    "retain_ppl": 5.407556597819278,
+    "forget_ppl": 155.40254700219842
+  }
+}

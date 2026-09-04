@@ -1,0 +1,20 @@
+# Virtual environment (886 MB — never commit this)
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Trained adapters are build artifacts. The JSON results in runs/ ARE kept,
+# since they are the experimental record.
+runs/*/adapter/
+
+# Rohit's released ELM adapter weights, downloaded from
+# https://elm.baulab.info/models/elm-wmdp/ — his artifact to distribute, not
+# ours. adapter_config.json is kept because check_config_fidelity.py needs it.
+reference/*/adapter_model.safetensors
+
+# macOS
+.DS_Store
